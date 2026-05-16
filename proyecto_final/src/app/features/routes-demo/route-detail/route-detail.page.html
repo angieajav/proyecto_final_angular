@@ -1,0 +1,27 @@
+<!--
+  Objetivo del ejercicio:
+  Mostrar el parametro id recibido por la ruta.
+
+  Que debe implementar el estudiante:
+  - Convertir routeId a numero.
+  - Llamar al backend con ese id.
+  - Mostrar 404 visual si no existe el recurso.
+
+  Resultado esperado:
+  La URL /rutas/1 muestra id = 1.
+-->
+<article class="card">
+  <a routerLink="/rutas">Volver</a>
+
+  @if (error()) {
+    <p class="error">{{ error() }}</p>
+  } @else if (task()) {
+    <h2>{{ task()!.title }}</h2>
+    <p>Estado: {{ task()!.statusLabel }}</p>
+    <p>Prioridad: {{ task()!.priorityLabel }}</p>
+    <p>Estudiante: {{ task()!.studentLabel }}</p>
+    <p>Fecha: {{ task()!.dueDateLabel }}</p>
+  } @else {
+    <p>Cargando...</p>
+  }
+</article>
